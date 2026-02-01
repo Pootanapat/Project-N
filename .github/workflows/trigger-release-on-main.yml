@@ -4,6 +4,9 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write
+
 jobs:
   create_release_if_tag:
     runs-on: ubuntu-latest
@@ -21,10 +24,15 @@ jobs:
         run: |
           if git tag --list | grep -q '^v1.0.0$'; then echo "found=true" >> $GITHUB_OUTPUT; else echo "found=false" >> $GITHUB_OUTPUT; fi
 
+      - name: Show releases folder
+        if: steps.tagcheck.outputs.found == 'true'
+        run: ls -la releases || true
+
       - name: Create Release (if tag found)
         if: steps.tagcheck.outputs.found == 'true'
         uses: ncipollo/release-action@v1
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           tag: v1.0.0
           files: releases/Project-N-release-v1.0.0.zip
           draft: false
