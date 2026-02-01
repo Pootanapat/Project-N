@@ -1,0 +1,31 @@
+name: Trigger Release on main when tag exists
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  create_release_if_tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch tags
+        run: git fetch --tags
+
+      - name: Check tag exists
+        id: tagcheck
+        run: |
+          if git tag --list | grep -q '^v1.0.0$'; then echo "found=true" >> $GITHUB_OUTPUT; else echo "found=false" >> $GITHUB_OUTPUT; fi
+
+      - name: Create Release (if tag found)
+        if: steps.tagcheck.outputs.found == 'true'
+        uses: ncipollo/release-action@v1
+        with:
+          tag: v1.0.0
+          files: releases/Project-N-release-v1.0.0.zip
+          draft: false
+          prerelease: false
