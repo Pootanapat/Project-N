@@ -1,16 +1,16 @@
 # Project-N
 
-This repository contains two web apps (React + Vite) for the course deliverable:
+ที่เก็บนี้ประกอบด้วยเว็บแอปสองตัว (React + Vite) สำหรับการส่งรายวิชา:
 
 - **Brain Booster: Zoo Adventure** — https://pootanapat.github.io/Project-N/brain-web/
 - **Little Brainiac: Hidden Object Zoo** — https://pootanapat.github.io/Project-N/little-web/
 
-## Quick links
-- Brain web: `docs/brain-web` (deployed to GitHub Pages)
-- Little web: `docs/little-web` (deployed to GitHub Pages)
+## ลิงก์ด่วน
+- Brain web: `docs/brain-web` (deploy บน GitHub Pages)
+- Little web: `docs/little-web` (deploy บน GitHub Pages)
 
-## Local setup (development)
-Each app is independent (TypeScript + Vite). To run locally:
+## การติดตั้งสำหรับพัฒนา (Local)
+แต่ละแอปแยกกัน (TypeScript + Vite). รันบนเครื่องได้ดังนี้:
 
 ```bash
 # Brain web
@@ -24,25 +24,25 @@ npm install
 npm run dev
 ```
 
-## Build (production)
+## สร้างเวอร์ชัน production
 ```bash
-# Build both
+# Build ทั้งคู่
 cd Project-N/brain-web && npm run build
 cd Project-N/little-web && npm run build
 ```
 
 ## CI / Auto-deploy
-This repository includes a GitHub Actions workflow (`.github/workflows/pages-deploy.yml`) which builds both apps on `push` to `main` and deploys the output to GitHub Pages at the subpaths:
+มี GitHub Actions workflow (`.github/workflows/pages-deploy.yml`) ที่จะ build ทั้งสองแอปเมื่อมีการ push ไปยัง `main` และ deploy ผลลัพธ์ไปยัง GitHub Pages ที่ subpaths:
 
 - `/brain-web/`
 - `/little-web/`
 
-## Release / Submission
-Releases are published with a tag and a zip artifact. See `releases/` for packaged deliverables.
+## Release / การส่งงาน
+Release จะถูกสร้างเป็น tag และแนบไฟล์ zip (ดูในโฟลเดอร์ `releases/`)
 
-## Team members
-See `Member.md` for members and student IDs.
+## สมาชิกทีม
+ดูรายละเอียดได้ที่ `Member.md`
 
 ---
 
-If you want me to attach a screenshot or add more details to `README.md`, tell me and I will update it.
+ถ้าต้องการให้ผมแนบภาพหน้าจอ (screenshot) หรือต้องการรายละเอียดเพิ่มเติมใน `README.md` บอกผมได้เลย ผมจะอัปเดตให้.
