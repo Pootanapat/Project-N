@@ -56,5 +56,3 @@ Release จะถูกสร้างเป็น tag และแนบไฟ�
 ![Little Brainiac screenshot](docs/images/little-web-screenshot.png)
 
 ---
-
-ถ้าต้องการให้ผมเปลี่ยนภาพหน้าจอจริง ๆ ให้ผมรู้ — ผมสามารถอัปโหลดภาพของคุณหรือให้คำแนะนำวิธี capture แล้วผมจะอัปเดต `README.md` ให้.
